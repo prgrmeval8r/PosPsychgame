@@ -228,6 +228,7 @@ def process_front_door(command):
                 'BAAAAAAAA', l) 
     #activity with elf
     #open door - is it locked first?
+    #paper birds would get key, something else should also give key NOT only birds
     #use key on door - how can a program 'have' a key or 'have' origami bird?
     else:
         message ('We could not parse that. You cannot ' + command, l)
