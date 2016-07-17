@@ -49,3 +49,25 @@ And in the south corner the steamer trunk has been polished. Its leather gleams 
 brown, and its brass fittings sparkle in the sunlight.
 
 """
+
+#Dictionary of gratitude notes 
+gratitude_notes = dict()
+
+gratitude_notes['note1'] = """
+
+One yellow note reads:
+        
+Three things I am grateful for today: 
+    Agrimony tea, house elves, catching up with an old friend
+I feel these emotions when I think of these things: 
+    loved, content, joyful
+"""
+
+gratitude_notes['note2'] = """
+A rose-colored paper reads:
+
+Three things I am grateful for today: 
+    morning commute free from trolls or dragons, my children, sunny weather
+I feel these emotions when I think of these things: 
+    comfortable, inspired, happy
+"""  
