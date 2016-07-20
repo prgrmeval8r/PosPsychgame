@@ -6,6 +6,12 @@ A few desperate weeds struggle in the dusty ground. You look closer and recogniz
 ragged lavender plant, a tired rose bush, and realize that this was once a beautiful garden. 
 Now there is more trash here than plants. 
 """
+descript['west_field'] = """
+The west field is a barren dusty place. The land quickly becomes hilly and off in the 
+far distance you can see the hills become jagged mountains that overwhelm the 
+horizon.
+Closer to you is a large wooden notice board.
+"""
 descript['notice_board'] = """
 A large public notice board stands in the middle of the wide field. You wonder why the builder 
 decided to put it out here far from any road or town.
@@ -15,8 +21,9 @@ next to the board.
 """
 descript['front_door'] = """
 The porch is slanting away from the house, it's likely some of the floor boards are rotten.
-You step carefully and notice there is an old mailbox next to a very large front door. 
-The windows are boarded up. You cannot see in.
+You step carefully and notice there is an old mailbox and dirty welcome mat next to a 
+very large front door. 
+The windows of the house are boarded up. You cannot see in.
 """
 descript['south_field'] = """
 The field stretches out before you.
@@ -47,7 +54,6 @@ There is a bowl of fruit by  sink and cabinets are bright yellow.
 
 And in the south corner the steamer trunk has been polished. Its leather gleams a rich dark
 brown, and its brass fittings sparkle in the sunlight.
-
 """
 
 #Dictionary of gratitude notes 
@@ -58,16 +64,16 @@ gratitude_notes['note1'] = """
 One yellow note reads:
         
 Three things I am grateful for today: 
-    Agrimony tea, house elves, catching up with an old friend
+    Warm cup of tea, house elves, catching up with an old friend
 I feel these emotions when I think of these things: 
-    loved, content, joyful
+    cared for, content, joyful
 """
 
 gratitude_notes['note2'] = """
 A rose-colored paper reads:
 
-Three things I am grateful for today: 
+Three things I am gratefula for today: 
     morning commute free from trolls or dragons, my children, sunny weather
 I feel these emotions when I think of these things: 
-    comfortable, inspired, happy
+    comfortable, loving, happy
 """  
