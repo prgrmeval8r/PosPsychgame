@@ -20,10 +20,10 @@ def message(text, current_loc):
 intro = """
 Welcome to Eunice.
 
-You are standing in a field just south of an old wood house. At one time it was a dearly
-loved home, a place of comfort and laughter.
-Now it stands silent and empty, with its windows boarded up. The yard in front of you is filled 
-with rotten wooden boards, twisted metal, and old tires.
+You are standing in a field just south of an old, wood house. 
+At one time it was a dearly loved home, a place of comfort and laughter.
+Now it stands silent and empty, with its windows boarded up. 
+The yard in front of you is filled with rotten wooden boards, twisted metal, and old tires.
 
 You decide its time to begin making a change.
 """
@@ -48,7 +48,7 @@ def look(loc_to_describ):
 
 def process_front_yard(command, butterfly_wing):
     l = 'front_yard'   
-    if command in ['clean trash', 'clean up trash', 'look through trash', 'clean up',
+    if command in ['clean trash', 'clean up trash', 'clean up',
                     'clean yard']:
         l = 'front_yard'
         message ('Its a huge job, but you organize some of the broken objects into piles ' +
@@ -77,7 +77,7 @@ def process_front_yard(command, butterfly_wing):
     elif command in ['walk west', 'go west']:
         l = 'west_field'
         message ('You walk into the dusty western field. The land becomes hilly, and ' +
-                    'you notice a dark object but cant make out what it is.', l) 
+                    'you notice a dark object ahead but cant make out what it is.', l) 
     elif command in ['go south', 'walk south']:
         l = 'south_field'
         message ('The field stretches on and on before you.', l)
@@ -101,16 +101,18 @@ def process_west_field(command):
         message ('You arrive at the front yard of the house.', l)
     else:
         message ('We could not parse that. You cannot ' + command, l)
+#RULE: a function should always have a return. Even though it lets you not have one, ALWAYS have one
+    return l
         
 def process_notice_board(command, paper_bird):
     l = 'notice_board'
     if command in ['read board', 'read the board', 'read notes', 'read the notes', 'read a note',
                     'read notice board', 'read the notice board', 'read notes on board', 
-                    'read the notes on board', 'read note']:
+                    'read the notes on board', 'read note', 'read notice', 'read notices']:
         l = 'notice_board'
         message (gratitude_notes['note1'], l)
-    elif command in ['read another', 'read another note', 'another', 'read another gratitude',
-                    'read another gratitude note']:
+    elif command in ['read another', 'read another note', 'read another gratitude',
+                    'read another gratitude note', 'read a second page', 'read another page']:
             l = 'notice_board'
             message (gratitude_notes['note2'], l) 
     elif command in ['write note', 'write a note', 'write gratitude note', 'write a gratitude note',
@@ -174,46 +176,139 @@ def process_south_field(command):
         message ('We could not parse that. You cannot ' + command, l)
     return l
 
-def process_front_door(command):
+def process_front_door(command, paper_bird):
     l = 'front_door'
-    if command in ['open mailbox', 'check mail', 'open the mailbox', 'check the mail']:
+    if command in ['open mailbox', 'check mail', 'open the mailbox', 'check the mail', 
+                    'open mail box']:
         l = 'front_door'
-        message ('You open the mailbox and peer inside. There is a sudden rustling ' +
-                'and a pair of beady eyes glare at you from a tiny wrinkled face. The elf,'  +
-                'for it has narrow pointy ears, is not happy to see you and screeches loudly ' +
-                'BAAAAAAAA!!', l) 
+        message (elf_speak['meet_elf'], l) 
     elif command in ['yell at elf', 'scream', 'scream at elf', 'give elf trash', 
                     'give elf some trash', 'give elf sock', 'give elf an old sock', 
                     'give elf sock']:
-        message ('The little house elf sticks out his tongue and turns his back on you', l)
-        #activity with elf
-        #give elf butter fly wing or paper bird
-        #lose on butterfly wing or paper bird
-        #elf gives key to the house - or is this too easy?
-        #additional conversation with elf. Maybe he tells something useful?
-    #maybe there can be something else to interact with too?
-        #doormat or...?
+        l = 'front_door'
+        message (elf_speak['elf_tongue'], l)
+    elif command in ['give elf paper bird', 'give elf a paper bird', 'give elf origami',
+                    'give elf origami bird', 'give elf an origami bird', 
+                    'give paper bird to elf']:
+        if paper_bird >= 1:
+            l = 'front_door2'
+            paper_bird = paper_bird - 1
+            print 'Origami birds: ', paper_bird 
+            message (elf_speak['get_bird'], l)
+            print 'Three things I enjoy doing: ',
+            enjoy = raw_input()
+            print 'When I do these things, my body feels: ',
+            feelenjoy = raw_input()
+            print """ 
+    Today, you enjoy %r. 
+    
+    Some physical feelings related to enjoyment are %r.          
+    
+Veeeeerrrrrrry interesting, he says. """ % (enjoy, feelenjoy) 
+        else:
+            l = 'front_door'
+            print 'Bird? What bird?'   
+    elif command in ['talk to elf', 'talk with elf', 'speak to elf', 'speak with elf']:
+        l = 'front_door'
+        message ('The elf refuses to talk to you', l)
+    elif command in ['offer to help', 'ask to help', 'help elf', 'offer help']:
+        l = 'front_door'
+        message ('The elf refuses your offer of help', l)
+    elif command in ['give elf butterfly wing', 'give elf a butterfly wing', 'give elf wing']:
+        l = 'front_door'
+        message (elf_speak['no_butterfly'], l)
     elif command in ['look at mat', 'look under welcome mat', 'look under mat', 
                     'investigate mat', 'take mat', 'lift mat', 'move mat']:
         l = 'front_door'
-        message ('You peer under the dusty welcome mat to find more dust and dirt.', l)
+        message ('You peer under the dusty mat to find more dust and dirt.', l)
     elif command in ['pull up boards', 'pull up floor boards', 'look under boards', 
                     'look under floor boards', 'look under floor boards']:
         l = 'front_door'
         message ('You hear some rodent-like sounds when you try to pull up the floor' +
-                ' boards. The floor boards wont move, probably just as well.')
+                ' boards. The floor boards will not move, probably just as well.')
+    elif command in ['open door', 'open the door', 'go inside', 'go inside the house',
+                    'go inside the house']:
+        l = 'front_door'
+        message ('The door is locked. You cannot enter', l)
     elif command in ['go south', 'walk south', 'walk to the south']:
         l = 'front_yard'
         message ('You arrive in the yard in front of the house', l)
     else:
         message ('We could not parse that. You cannot ' + command, l)
-    return l
+    return l, paper_bird
         
+        
+        
+#NEW FRONT_DOOR LOC
+def process_front_door2(command, paper_bird):
+    l = 'front_door2'
+    if command in ['open mailbox', 'check mail', 'open the mailbox', 'check the mail', 
+                    'open mail box']:
+        l = 'front_door2'
+        message ('The mailbox is already open') 
+    elif command in ['yell at elf', 'scream', 'scream at elf', 'give elf trash', 
+                    'give elf some trash', 'give elf sock', 'give elf an old sock', 
+                    'give elf sock']:
+        l = 'front_door2'
+        message ('The elf laughs at your antics', l)
+    elif command in ['give elf paper bird', 'give elf a paper bird', 'give elf origami',
+                    'give elf origami bird', 'give elf an origami bird', 
+                    'give paper bird to elf']:
+        if paper_bird >= 1:
+            l = 'front_door2'
+            paper_bird = paper_bird - 1
+            print 'Origami birds: ', paper_bird 
+            message (elf_speak['get_bird'], l)
+            print 'Three things I enjoy doing: ',
+            enjoy = raw_input()
+            print 'When I do these things, my body feels: ',
+            feelenjoy = raw_input()
+            print """ 
+    Today, you enjoy %r. 
+    
+    Some physical feelings related to enjoyment are %r.          
+    
+Veeeeerrrrrrry interesting, he says. """ % (enjoy, feelenjoy) 
+        else:
+            l = 'front_door'
+            print 'Bird? What bird?'   
+    elif command in ['talk to elf', 'talk with elf', 'speak to elf', 'speak with elf', 
+                    'ask elf question']:
+        l = 'front_door2'
+        message (elf_speak['elf_talk'], l)
+    elif command in ['offer to help', 'ask to help', 'help elf', 'offer help']:
+        l = 'inside_house'
+        message (elf_speak['elf_help'], l)
+    elif command in ['give elf butterfly wing', 'give elf a butterfly wing', 'give elf wing']:
+        l = 'front_door2'
+        message (elf_speak['no_butterfly'], l)
+    elif command in ['look at mat', 'look under welcome mat', 'look under mat', 
+                    'investigate mat', 'take mat', 'lift mat', 'move mat']:
+        l = 'front_door2'
+        message ('You peer under the dusty mat to find more dust.', l)
+    elif command in ['pull up boards', 'pull up floor boards', 'look under boards', 
+                    'look under floor boards', 'look under floor boards']:
+        l = 'front_door2'
+        message ('You hear some rodent-like sounds when you try to pull up the floor' +
+                ' boards. The floor boards will not move, probably just as well.')
+    elif command in ['open door', 'open the door', 'go inside', 'go inside the house',
+                    'go inside the house']:
+        l = 'front_door2'
+        message ('The door is locked. You cannot enter', l)
+    elif command in ['go south', 'walk south', 'walk to the south']:
+        l = 'front_yard'
+        message ('You arrive in the yard in front of the house', l)
+    else:
+        message ('We could not parse that. You cannot ' + command, l)
+    return l, paper_bird        
+
 def process_inside_house(command):
     l = 'inside_house'
     if command in ['leave', 'go to door', 'go to porch', 'go outide']:
         l = 'front_door'
         message ('You leave the house closing the door behind you', l)
+    else:
+        message ('We could not parse that. You cannot ' + command, l)
     return l
 
 #while True is True - forever loop
@@ -233,7 +328,9 @@ while True:
     elif location == 'south_field':
         location = process_south_field(command)
     elif location == 'front_door':
-        location = process_front_door(command)
+        (location, paper_bird) = process_front_door(command, paper_bird)
+    elif location == 'front_door2':
+        (location, paper_bird) = process_front_door2(command, paper_bird)
     elif location == 'inside_house':
         location = process_inside_house(command)
     else:
