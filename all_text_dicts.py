@@ -70,4 +70,5 @@ Three things I am grateful for today:
     morning commute free from trolls or dragons, my children, sunny weather
 I feel these emotions when I think of these things: 
     comfortable, inspired, happy
+    
 """  
