@@ -17,6 +17,7 @@ A weathered note is stuck on a rusty nail.
 You decide its time to begin making a change.
 """
 
+
 descript['yard_note'] = """
 
 The note reads:
@@ -25,7 +26,7 @@ Welcome to Eunice.
 It is a shadow of its former glory.
 
 Use simple instructions to interact with this place and its strange inhabitants.
-To move around use cardinal compass directions or 'go' + cardinal compass direction
+To move around use cardinal compass directions. 
 
 Type 'look' to view your surroundings, and keep an eye out for changes.
 
@@ -33,8 +34,11 @@ Type 'exit' to leave the game.
 
 Type 'investigate' + object to find out more about a specific thing.
 
+Type 'inventory' to see what have you got in your pockets.
+
 Remember, you will get as much from the game as you decide to put in to it.
 """
+
 
 descript['front_yard'] = """
 
@@ -43,7 +47,7 @@ Now there is more trash on the ground than plants.
 It could use a clean up.
 
 You look closer and recognize ragged lavender plant, a tired rose bush.
-A note is stuck to a rose thorn.
+A note is stuck to a rusty nail.
  
 A field stretches out to the west, south, and east.
 North of you is a boarded-up house.
@@ -53,9 +57,19 @@ descript['clean_yard'] = """
 
 It's a huge job, but you organize some of the broken objects into piles and 
 clear some space around the plants. 
-Beneath the trash you find a delicate butterfly wing. 
+Beneath the trash you find a bamboo flute. 
 
 You keep it for later.
+"""
+
+descript['clean_yard2'] = """
+
+You organize more of the broken objects into piles and clear some space around the plants. 
+The garden looks better because of your work.
+
+You look around at the improved garden in satisfaction. 
+It is starting to bloom.
+You have done all you can for now.
 """
 
 descript['front_yard2'] = """
@@ -89,7 +103,7 @@ descript['quaking_bog'] = """
 The air smells of mud and just a hint of sulphur.
 Moss, water, and thick marsh grasses mix at your feet
 
-Nearby you see a board posting the 'Park Rules and Regulations'.
+Nearby you see a sign 'Quaking Bog Rules and Regulations'.
 """
 
 descript['bog_heart'] = """
@@ -117,20 +131,21 @@ He is looking at you with interest.
 descript['north_field_east'] = """
 
 Grass covers the ground.
-You are in the north field east.
+The dark stone wall dominates the north field.
+
 """
 
 descript['north_field_west'] = """
 
 Grass covers the ground.
-You are in the north field west.
-"""
+The dark stone wall dominates the north field."""
 
 descript['maze_entrance'] = """
 
 You are at the entrance to a maze.
 You can go back (b) to return here to the maze entrance.
 """
+
 descript['maze_begin'] = """
 
 You try to enter the maze and instead come upon the wild game designer hunched over a computer.
@@ -158,7 +173,7 @@ The land quickly becomes hilly.
 
 In the far distance, dry hills grow into jagged mountains that overwhelm the horizon.
 
-To the west is a large wooden notice board.
+To the west is a dark object, rising like a sign of some kind.
 """
 
 descript['notice_board'] = """
@@ -187,8 +202,22 @@ There are many more notes about gratitude now, fluttering in the light breeze.
 
 descript['south_field'] = """
 
+You are walking through the south field. 
+It is a wild prairie land with thick grasses.
+Every so often you hear the sudden rustling behind you or just ahead that could be little animals.
+Yet, you see none.
+
 The field stretches out before you.
 """
+
+descript['southsouth_field'] = """
+
+Tall prairie grasses grow as far as your eye can see.
+They create an ocean of green.
+The only thing breaking the continuity is solitary old apple tree.
+
+"""
+
 
 descript['front_door'] = """
 
@@ -202,6 +231,14 @@ The windows of the house are boarded up.
 You cannot see in.
 """
 
+descript['front_door2'] = """
+
+The porch is slanting away from the old house.
+But, the porch has been swept and the mailbox repainted a cheery yellow.
+
+The windows of the house are boarded up. 
+You cannot see in.
+"""
 
 descript['inside_house'] = """
 
@@ -247,20 +284,38 @@ descript['trunk_closeup2'] = """
 The trunk takes up your field of vision.
 
 It is open now.
+There is a huge egg, as big as a boulder, inside
+"""
+
+
+descript['trunk_closeup3'] = """
+
+The trunk takes up your field of vision.
+
+It is open now. The egg is hatched.
 Hope is free.
 """
 
-descript['inside_house3'] = """
 
-You look around and notice that the boards have disappeared from the window and you are
-now in a tiny home.
 
-A polished oak table and chair with a blue cushion fits into the west corner. 
-There is a bowl of fruit by the sink and cabinets are a bright yellow. 
+descript['the_end'] = """
 
-And in the south corner the steamer trunk has been polished. 
-It's leather gleams a rich dark brown.
-It's brass fittings sparkle in the sunlight.
+You have succeeded in returning Eunice to its glory! 
+
+- from the mountains and valleys in the west to the great bogs and marshes in the east -
+and through the peaceful maze of stone and the apple tree heavy with happy fruit -
+        
+        *       *       *
+
+        Hope fills the land.
+       
+        *       *       *
+"""
+
+descript['the_end1'] = """        
+
+It is now time to return to your own world.
+Thank you for your strength, gratitude, appreciation, humor, happiness, grit, calm, and creativity.
 """
 
 #Investigation Dictionary
@@ -269,6 +324,8 @@ curiosity = dict()
 curiosity['garden'] = """
 
 The garden is dry and littered with forgotten mail, broken windows, pieces of wood.
+
+The plants, the dusty lavender and rose bush, are struggling to grow in the rubbish-strewn yard.
 
 Maybe if someone cleaned up it would look better. 
 """
@@ -282,6 +339,19 @@ Thyme and creeping wintergreen cover the ground.
 The rose bush is budding and will flower soon.
 """
 
+curiosity ['flute'] = """
+The little flute is simply carved from a piece of bamboo.
+You place to to your lips and blow a few experimental notes.
+The sound is soft and a little melancholy.
+"""
+
+curiosity['play_flute'] = """
+You bring the flute to your mouth and try a few experiemntal notes. 
+Though your fingers fumble over the notes, the sound is enchanting.
+
+But standing here playing the flute won't get you anywhere.
+You put in back in your pocket for later
+"""
 curiosity['butterfly_wing'] = """
 
 The wing glitters in deep browns with fanciful swirls of gold and blue.
@@ -315,10 +385,55 @@ The key is heavy brass and old fashioned.
 It rests solidly in your hand.
 """
 
+curiosity['appletree'] = """
+
+The tree is dark against the deep blue of the sky.
+The trunk is thick and twisted, and the gnarly low branches create a great crown on the horizon.
+
+The tree is bare of leaves.
+"""
+
+curiosity['apple'] = """
+
+A small apple is speckled with reds, greens, and browns.
+It hangs high above you, and you stretch to reach it.
+As your fingers touch the fruit's skin, a little song plays:
+
+Fruits of happiness grow,
+Whether in warm sun or snow,
+And, so we'd like to know,
+Would you add a fruit - yes/no?
+"""
+
+curiosity['apple0'] = """
+
+Standing on tiptoes, you stretch up. 
+You reach higher, all muscles straining.
+But you cannot reach the apple, only graze it with your fingers.
+
+Whenever you touch it, the little song plays:
+
+Fruits of happiness grow,
+Whether in warm sun or snow,
+And, so we'd like to know,
+Would you add a fruit - yes/no?
+"""
+
+curiosity['happy_tree'] = """
+
+Another ripe, red apple appears with an audible pop!
+"""
+
 curiosity['notice_board'] = """
 
 From here, it looks like the kind of notice board posted at country road crossings.
 Though there is no road in sight.
+"""
+
+curiosity['wall'] = """
+
+Dark stone forms an imposing wall. 
+It rises many feet over your head.
 """
 
 curiosity['paper_bird'] = """
@@ -345,6 +460,7 @@ With the Troll wringing his hands, the little house seems to turn on itself in w
 curiosity['house2'] = """
 
 The table and chairs are standing upright though still dusty.
+
 Light is finally able to filter in through the windows.
 It shines on the trunk and tea kettle.
 """
@@ -391,6 +507,7 @@ It's impossible to see more with a huge troll sitting on it.
 curiosity['trunk2'] = """
 
 The trunk is made of heavy wood and reinforced with lead and brass fittings.
+
 There is something written on the strange, brass lock. You are too far away to read it.
 The lock and all the fittings shine, as if recently polished.
 """
@@ -405,48 +522,113 @@ Type 'stand up' to go back to the rest of the house.
 
 curiosity['trunk_closeup'] = """
  
-There is a tangled nest of metal locking the trunk.
-Below it is also a brass plate with the words:
+You peer closer to see that the large lock is in the shape of snake, coiled around itself.
+The snake is made of brass with little emerald eyes.
+Each scale carved in perfect detail.
 
-That perches in the soul -
-And sings the tune without the words -
-And never stops - at all -  
+There is no keyhole or any way to open the trunk visible. 
+Below it is also a brass plate with the word: Koschei
 """
 
 curiosity['trunk_open'] = """
 
-You carefully take out the paper bird, and remember for a moment some things you were grateful for.
+You take the bamboo flute from your pocket, remembering the budding garden outside.
 
-The bird fits into the metal nest and slowly begins to twitch and fold up into a tiny blue egg.
-The metal wavers and changes into green vine tendrils. 
+You put it to your lips and this time a slow and sleepy melody pours from the little flute.
 
-Then the nest lifts on a growing green branch and the trunk opens.
+As you continue to play the snake begins to uncoil. 
+It is mesmerized by the sound.
+
+Then with a little flick of its coral tongue, it slithers off the trunk, no longer trapped.
+The snake continues through the now open window and into the garden toward home.
+The trunk is unlocked!
 """
 
 curiosity['trunk_inside'] = """
+Inside the trunk is a cream and charcoal colored egg.
+It is resting in a nest of twigs, newspaper, and ribbons.
+"""
 
-At first the trunk looks empty.
+curiosity['trunk_inside1'] = """
 
-Then in one corner you see a tiny, bony thing with feathers. 
+The cast off shells lay in the nest of twigs and ribbons.
+Hope is no longer trapped.
+"""
+
+curiosity['egg'] = """
+The egg is huge, larger than a basketball.
+The shell is dimpled slightly all over. It looks very thick and strong.
+"""
+
+curiosity['trunk_inside2'] = """
+
+You carefully take out the folded paper bird, remembering some things you were grateful for.
+You place the little paper bird on top of the enormous egg.
+It balances on top of the egg, just a little lopsided. 
+
+For the moment, nothing happens.
+"""
+
+curiosity['egg1'] = """
+
+Then the paper bird flutters and settles in to warm the egg.
+"""
+
+curiosity['egg2'] = """
+
+Slowly the egg begins to wobble, then quake.
+
+The paper bird flaps away to the window sill, and watches with satisfaction.
+"""
+
+curiosity['egg3'] = """
+
+A crack forms in the shell.
+The crack expands and spreads.
+After what feels like hours, you can see a tiny beak poking through.
+
+As the hatchling breaks free of the egg, sunlight fills the house.
+"""
+
+curiosity['egg4'] = """
+
+                . .
+                 v
+               |)__)
+               -"-"-
+"""
+
+
+curiosity['egg5'] = """
+
+The hatchling is a delicate thing with feathers. 
 
 It makes a shrill chirp and shuffles it's baby bird wings.
 
-It spreads it's wings and before your eyes it grows and grows.
+Slowly, it spreads it's wings.
+Before your eyes it grows and grows.
 It flies across all of Eunice like a cloud, yet filling it with sunlight.
-
-You have brought Hope back to the land.
 """
 
-curiosity['hope'] = """
 
-    * * *
+curiosity['egg6'] = """
 
-Hope has spread its wings over the land
-Eunice is returned to its glory!
 
-    * * *
+- -                                       - -
+    - - \                           / - - 
+            \        . .        /
+                \     v     /  
+                   \(_ _)/  
+                   (_ _ _)
+                     " "
+                    
 
+
+Hope has returned to the land.
 """
+
+
+
 
 #Dictionary of gratitude notes 
 gratitude_notes = dict()
@@ -527,37 +709,48 @@ elf_speak['elf_talk0'] = """
 'What happened here?' you ask.
 
 'We are doomed in this place.'
-the elf replies, 'lost without Hope.'
+the elf replies, 'Eunice has lost its glory.'
 
-She stands frowning. Do you want to talk more?
+She stands frowning, 'can you help us?'
+"""
+
+elf_speak['elf_refuse'] = """
+The little elf shrugs her shoulders, as if she expected no one to help any way.
+
+She wiggled her fingers at you, and a wind grew up beneath your feet.
+Off the front porch you fly, sailing backwards!
 """
 
 elf_speak['elf_talk1'] = """
 
-'As the pessimistic person I am,' the elf continues,
-'I expect this situation will be permanent.
-Everything is falling apart, and I take it personally.'
+'Well, what do you have to offer?' the elf asked, still suspicious,
+'List some of your strengths below or go to 
+http://www.viacharacter.org/www/Character-Strengths-Survey 
+and take the short quiz.'
+
 """
 
 elf_speak['elf_talk2'] = """
 
-'How pessimistic and optimistic are you?
-Go to http://web.stanford.edu/class/msande271/onlinetools/LearnedOpt.html 
-and take the short quiz.'
-"""
-elf_speak['elf_talk3'] = """
-
 'Thanks for sharing', the elf says.
 
 "If you could help us, then maybe things aren't so hopeless after all.'
+
+The elf and her surroundings look a little brighter.
 """
 
 elf_speak['elf_door'] = """
 
 'The door is locked. 
-The key is lost'
+The key is lost.'
 The elf turns away, shaking her head sadly.
 """
+
+elf_speak['elf_talk3'] = """
+The elf gives you a tiny ghost of a smile.
+She has nothing else to say, and is waiting to see what will happen.
+"""
+
 
 #Dictionary of quaking bog  --include bog_heart too?
 bog_text = dict()
@@ -644,6 +837,10 @@ The toad recites this riddle:
     What am I?'
 
 """
+
+#when maze is done
+#add 'a token of flexibility'
+#add something for the fruits of happiness
 bog_text['toad_talk1'] = """
 
 'You answered correctly.' the toad says,
@@ -652,13 +849,17 @@ bog_text['toad_talk1'] = """
 Inside the house is a locked trunk.
 
 You will need: 
-    a practice of calmness 
-    a sign of gratitude 
-    (something something maze - maybe positive self talk here)  
+    a practice of calmness,
+    a song of order, 
+    a sign of gratitude,   
 
 to restore Eunice to its former glory!
 
 To begin, reach deep into the bog for the house key'
+"""
+
+bog_text['toad_talk2'] = """
+'Now that you have the key, please help us!' the toad croaks.
 """
 
 bog_text['bog_reach0'] = """
